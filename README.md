@@ -1,7 +1,7 @@
 # FlyingSheep
-FlyingSheep is a custom Game-Platform created by BrosCoding
+FlyingSheep is a custom Game-Platform created by BrosCoding.
 
-# TeamColors
+# Team Colors
 - WHITE
 - PINK
 - GRAY
