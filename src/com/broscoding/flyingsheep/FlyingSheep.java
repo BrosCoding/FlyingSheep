@@ -26,7 +26,7 @@ public class FlyingSheep extends JavaPlugin {
 	
 	@SuppressWarnings("deprecation")
 	public void onEnable() {
-		
+		//test
 		log.info("[FlyingSheep] Loading...");
 		long time = System.currentTimeMillis();
 		
