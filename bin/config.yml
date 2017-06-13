@@ -1,0 +1,15 @@
+##################################
+#         Flying Sheep           #
+#        by  BrosCoding          #
+##################################
+
+# Toggle update reminder
+# If false you wont receive reminders (recommending true)
+UpdateReminder: true
+
+# This message will be the prefix display infront of almost every message
+Prefix: '&8[&cFlyingSheep&8] '
+
+# If this is true, the entire server will be the game
+# This is for big server networks
+BungeeMode: false

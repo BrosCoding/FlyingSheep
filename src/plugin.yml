@@ -1,0 +1,10 @@
+name: FlyingSheep
+main: com.broscoding.flyingsheep.FlyingSheep
+version: 1.0.0
+author: BrosCoding
+website: http://coffeebunny.net/
+commands:
+    flyingsheep:
+      usage: /<command>
+      description: Subcommand for FlyingSheep
+      aliases: [fs]
