@@ -6,32 +6,45 @@ import java.util.HashMap;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
-import com.broscoding.flyingsheep.utils.TeamColors;
+import com.broscoding.flyingsheep.util.GameStage;
+import com.broscoding.flyingsheep.util.TeamColor;
 
 public class Game {
 	
 	private ArrayList<Player> players = new ArrayList<Player>();
 	
-	private HashMap<TeamColors, Location> spawns = new HashMap<TeamColors, Location>();
+	private ArrayList<Player> spectators = new ArrayList<Player>();
+	
+	private HashMap<Player, Integer> sheepHearts = new HashMap<Player, Integer>();
+	
+	private HashMap<TeamColor, Location> spawns = new HashMap<TeamColor, Location>();
 	
 	private int minPlayers;
-	private int maxPlayers;
 	
 	private Location lobby;
 	
+	private Location mid;
+	
 	private String name;
 	
-	public Game(String name, int minPlayers, int maxPlayers) {
+	private GameStage gameStage;
+	
+	public Game(String name, int minPlayers) {
+		this.name = name;
 		this.minPlayers = minPlayers;
-		this.maxPlayers = maxPlayers;
+		this.gameStage = GameStage.WAITING;
+	}
+	
+	public void setGameStage(GameStage gameStage) {
+		this.gameStage = gameStage;
+	}
+	
+	public GameStage getGameStage() {
+		return gameStage;
 	}
 	
 	public String getName() {
 		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
 	}
 	
 	public int getMinPlayers() {
@@ -39,7 +52,7 @@ public class Game {
 	}
 	
 	public int getMaxPlayers() {
-		return maxPlayers;
+		return spawns.size();
 	}
 	
 	public void setLobby(Location lobby) {
@@ -50,6 +63,14 @@ public class Game {
 		return lobby;
 	}
 	
+	public void setMid(Location mid) {
+		this.mid = mid;
+	}
+	
+	public Location getMid() {
+		return mid;
+	}
+	
 	public void addPlayer(Player p) {
 		players.add(p);
 	}
@@ -58,19 +79,49 @@ public class Game {
 		players.remove(p);
 	}
 	
-	public ArrayList<Player> getPlayers(Player p) {
+	public ArrayList<Player> getPlayers() {
 		return players;
 	}
 	
-	public void setSpawn(TeamColors color, Location location) {
+	public void addSpectator(Player p) {
+		spectators.add(p);
+	}
+	
+	public void removeSpectator(Player p) {
+		spectators.remove(p);
+	}
+	
+	public ArrayList<Player> getSpectators() {
+		return spectators;
+	}
+	
+	public void setSpawn(TeamColor color, Location location) {
 		spawns.put(color, location);
 	}
 	
-	public Location getSpawn(TeamColors color) {
+	public Location getSpawn(TeamColor color) {
 		return spawns.get(color);
 	}
 	
-	public HashMap<TeamColors, Location> getSpawns() {
+	public HashMap<TeamColor, Location> getSpawns() {
 		return spawns;
+	}
+	
+	public int getSpawnAmount() {
+		return spawns.size();
+	}
+	
+	public void setSheepHearts(Player p, int hearts) {
+		sheepHearts.put(p, hearts);
+	}
+	
+	public int getSheepHearts(Player p) {
+		return sheepHearts.get(p);
+	}
+	
+	public void broadcastMessage(String message) {
+		for (Player p : getPlayers()) {
+			p.sendMessage(message);
+		}
 	}
 }

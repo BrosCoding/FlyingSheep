@@ -1,2 +1,8 @@
 eclipse.preferences.version=1
-encoding//src/com/broscoding/flyingsheep/commands/HelpCommand.java=UTF-8
+encoding//src/com/broscoding/flyingsheep/command/sub/CreateCommand.java=UTF-8
+encoding//src/com/broscoding/flyingsheep/command/sub/DeleteCommand.java=UTF-8
+encoding//src/com/broscoding/flyingsheep/command/sub/HelpCommand.java=UTF-8
+encoding//src/com/broscoding/flyingsheep/command/sub/JoinCommand.java=UTF-8
+encoding//src/com/broscoding/flyingsheep/command/sub/LeaveCommand.java=UTF-8
+encoding//src/com/broscoding/flyingsheep/command/sub/ListCommand.java=UTF-8
+encoding//src/com/broscoding/flyingsheep/runnable/ActionBarRunnable.java=UTF-8

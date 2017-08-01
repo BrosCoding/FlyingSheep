@@ -1,8 +1,8 @@
 name: FlyingSheep
 main: com.broscoding.flyingsheep.FlyingSheep
-version: 1.0.0
+version: 1.0
 author: BrosCoding
-website: http://coffeebunny.net/
+website: http://broscoding.com/
 commands:
     flyingsheep:
       usage: /<command>

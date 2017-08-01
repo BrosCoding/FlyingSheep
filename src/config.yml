@@ -1,15 +1,76 @@
 ##################################
-#         Flying Sheep           #
-#        by  BrosCoding          #
+#          FlyingSheep           #
+#         by BrosCoding          #
+##################################
+
+##################################
+#            Basics              #
 ##################################
 
 # Toggle update reminder
-# If false you wont receive reminders (recommending true)
+# If false you will not receive reminders (reminders are recommended)
 UpdateReminder: true
 
 # This message will be the prefix display infront of almost every message
-Prefix: '&8[&cFlyingSheep&8] '
+Prefix: '&8[&cFlying&fSheep&8] '
 
 # If this is true, the entire server will be the game
 # This is for big server networks
 BungeeMode: false
+
+# Fallback Server for BungeeMode
+# If BungeeMode is false jump over this step
+# This is also the server you will be sent to if you type /fs leave, or
+# leaves the game by clicking the leave item in the lobby
+Fallback-Server: HUB
+
+##################################
+#             Game               #
+##################################
+
+# If a player's sheep looses all it's health, do you want i to continue spectating?
+# If spectator mode is true you can join the game after the games has started and start spectating it
+Spectator-Mode: true
+
+# The distance a spectator can fly from the middle of the map
+Spectator-Flight-Limit: 50
+
+# If false FlyingSheep's scoreboard wont be shown
+# Remember FlyingSheep's scoreboard will overite FeatherBoard's scoreboard
+Scoreboard: true
+
+# Players with fulljoin permissions can join fullgames
+# Set this to false to disable the feature
+# All permissions can be find at 
+Full-Join-Enabled: true
+
+##################################
+#             Stats              #
+##################################
+
+# If you want the plugin to completely ignore the stats system you can disable it here
+Stats: true
+
+# Disable this if you wont have wins to show up on the stats
+Show-Wins: true
+
+# Disable this if you wont have looses to show up on the stats
+Show-Looses: true
+
+# Disable this if you wont have played games to show up on the stats
+Show-Games-Played: true
+
+##################################
+#        Stats Backend           #
+##################################
+
+Backend: file
+Backends:
+  file:
+    Directory: stats.yml
+  sql:
+    Host: example_host.com
+    Database: example_database
+    Port: 3306
+    User: example_username
+    Password: example_password
